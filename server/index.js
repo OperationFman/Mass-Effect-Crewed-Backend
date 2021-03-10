@@ -1,7 +1,7 @@
 const express = require("express");
-
 const PORT = process.env.PORT || 3001;
 const app = express();
+const fs = require('fs');
 
 app.get('/api', (req, res) => {
     res.json({message: "Hello from server!" });
