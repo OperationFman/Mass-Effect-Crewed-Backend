@@ -8,7 +8,9 @@ let userData = JSON.parse(rawdata);
 console.log(userData.MassEffect3);
 
 app.get('/api/:userId', (req, res) => {
-    res.json({userData});
+  userId = req.params.userId
+  
+  res.json({userData});
 });
 
 app.listen(PORT, () => {
