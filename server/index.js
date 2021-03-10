@@ -14,12 +14,15 @@ function removeSavesFileType() {
   };
   return result
 };
-console.log(removeSavesFileType());
 
 app.get('/api/:userId', (req, res) => {
   userId = req.params.userId
-  
-  res.json({userData});
+  userSaveFiles = removeSavesFileType()
+  if (userSaveFiles.includes(userId)) {
+    res.json({userData});
+  } else {
+    console.log('No user by that Id');
+  };
 });
 
 app.listen(PORT, () => {
