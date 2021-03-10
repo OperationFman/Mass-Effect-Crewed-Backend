@@ -8,19 +8,38 @@
         "Ashley"
     ],
     "MassEfect2": [
-        "Kaiden",
+        "Kasumi",
+        "Grunt",
+        "Thane",
+        "Jack",
+        "Miranda",
+        "Legion",
+        "Zaeed",
         "Tali",
-        "Liara",
+        "Samara",
+        "Mordin",
+        "Jacob",
         "Garrus",
-        "Wrex",
-        "Ashley"
+        "Liara"
     ],
     "MassEffect3": [
-        "Kaiden",
+        "Kasumi",
+        "Grunt",
+        "Thane",
+        "Jack",
+        "Miranda",
+        "Legion",
+        "Zaeed",
         "Tali",
-        "Liara",
+        "Samara",
+        "Mordin",
+        "Jacob",
         "Garrus",
-        "Wrex",
-        "Ashley"
+        "Liara",
+        "Javik",
+        "James",
+        "EDI",
+        "Aria",
+        "Nyreen"
     ]
 }
