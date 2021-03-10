@@ -5,10 +5,10 @@ const fs = require('fs');
 
 let rawdata = fs.readFileSync('./server/saves/franklin.m.moon.json');
 let userData = JSON.parse(rawdata);
-console.log(userData);
+console.log(userData.MassEffect3);
 
-app.get('/api', (req, res) => {
-    res.json({message: "Hello from server!" });
+app.get('/api/:userId', (req, res) => {
+    res.json({userData});
 });
 
 app.listen(PORT, () => {
