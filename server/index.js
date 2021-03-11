@@ -14,8 +14,11 @@ function removeSavesFileType() {
 };
 
 function makeNewSaveFile(id) {
-  console.log(id);
-}
+  let rawTemplate = fs.readFileSync('./server/saves/template.json');
+  let template = JSON.parse(rawTemplate);
+  let data = JSON.stringify(template);
+  fs.writeFileSync(`./server/saves/${id}.json`, data)
+};
 
 app.get('/api/:userId', (req, res) => {
   userId = req.params.userId
