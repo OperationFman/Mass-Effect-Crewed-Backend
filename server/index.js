@@ -20,18 +20,21 @@ function makeNewSaveFile(id) {
   fs.writeFileSync(`./server/saves/${id}.json`, data)
 };
 
+function getSaveFile(id) {
+  let rawdata = fs.readFileSync(`./server/saves/${id}.json`);
+  return JSON.parse(rawdata);
+};
+
 app.get('/api/:userId', (req, res) => {
   userId = req.params.userId
   userSaveFiles = removeSavesFileType()
   if (userSaveFiles.includes(userId)) {
-    let rawdata = fs.readFileSync(`./server/saves/${userId}.json`);
-    let userData = JSON.parse(rawdata);
+    let userData = getSaveFile(userId);
     res.status(200).json({userData});
   } else {
     makeNewSaveFile(userId);
-    res.status(200).send({
-      message: 'New File Created'
-   });
+    let userData = getSaveFile(userId);
+    res.status(200).json({userData});
   };
 });
 
