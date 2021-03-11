@@ -25,7 +25,7 @@ function getSaveFile(id) {
   return JSON.parse(rawdata);
 };
 
-app.get('/api/:userId', (req, res) => {
+app.get('/api/post/:userId', (req, res) => {
   userId = req.params.userId
   userSaveFiles = removeSavesFileType()
   if (userSaveFiles.includes(userId)) {
@@ -37,6 +37,10 @@ app.get('/api/:userId', (req, res) => {
     res.status(200).json({userData});
   };
 });
+
+app.post('/api/post', function (req, res) {
+  makeNewSaveFile('applebottomjeans');
+})
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
