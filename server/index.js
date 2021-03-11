@@ -4,8 +4,6 @@ const app = express();
 const fs = require('fs');
 saves = fs.readdirSync('./server/saves'); 
 
-// let rawdata = fs.readFileSync('./server/saves/franklin.m.moon.json');
-// let userData = JSON.parse(rawdata);
 
 function removeSavesFileType() {
   const result = new Array(saves.length)
