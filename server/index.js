@@ -13,6 +13,10 @@ function removeSavesFileType() {
   return result
 };
 
+function writeJsonSaveFile(id) {
+  console.log(id);
+}
+
 app.get('/api/:userId', (req, res) => {
   userId = req.params.userId
   userSaveFiles = removeSavesFileType()
@@ -21,6 +25,7 @@ app.get('/api/:userId', (req, res) => {
     let userData = JSON.parse(rawdata);
     res.status(200).json({userData});
   } else {
+    writeJsonSaveFile('keegan.guidotti8');
     res.status(400).send({
       message: 'Error!'
    });
