@@ -39,7 +39,8 @@ app.get('/api/post/:userId', (req, res) => {
 });
 
 app.post('/api/post', function (req, res) {
-  makeNewSaveFile('applebottomjeans');
+  console.log(req.body);
+  res.status(200);
 })
 
 app.listen(PORT, () => {
