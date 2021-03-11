@@ -16,7 +16,7 @@ function removeSavesFileType() {
 function makeNewSaveFile(id) {
   let rawTemplate = fs.readFileSync('./server/saves/template.json');
   let template = JSON.parse(rawTemplate);
-  let data = JSON.stringify(template);
+  let data = JSON.stringify(template, null, 2);
   fs.writeFileSync(`./server/saves/${id}.json`, data)
 };
 
