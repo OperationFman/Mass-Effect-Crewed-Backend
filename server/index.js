@@ -7,6 +7,9 @@ app.use(cors())
 
 saves = fs.readdirSync('./server/saves'); 
 
+app.use(express.json());
+app.use(express.urlencoded({ extended:false }))
+
 function removeSavesFileType() {
   const result = new Array(saves.length)
   for (let i = 0; i < saves.length; ++i) {
