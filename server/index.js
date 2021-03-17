@@ -39,7 +39,8 @@ app.get('/api/get/:userId', (req, res) => {
 });
 
 app.post('/api/post', function (req, res) {
-  console.log(req.body);
+  console.log(req);
+  console.log(res);
   res.status(200);
 })
 
