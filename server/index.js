@@ -25,7 +25,7 @@ function getSaveFile(id) {
   return JSON.parse(rawdata);
 };
 
-app.get('/api/post/:userId', (req, res) => {
+app.get('/api/get/:userId', (req, res) => {
   userId = req.params.userId
   userSaveFiles = removeSavesFileType()
   if (userSaveFiles.includes(userId)) {
