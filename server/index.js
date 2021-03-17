@@ -2,8 +2,10 @@ const express = require("express");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const fs = require('fs');
-saves = fs.readdirSync('./server/saves'); 
+const cors = require('cors')
+app.use(cors())
 
+saves = fs.readdirSync('./server/saves'); 
 
 function removeSavesFileType() {
   const result = new Array(saves.length)
@@ -40,7 +42,7 @@ app.get('/api/get/:userId', (req, res) => {
 
 app.post('/api/post', function (req, res) {
   console.log(req);
-  console.log(res);
+  // console.log(res);
   res.status(200);
 })
 
