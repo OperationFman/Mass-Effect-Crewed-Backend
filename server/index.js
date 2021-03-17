@@ -40,8 +40,8 @@ app.get('/api/get/:userId', (req, res) => {
   };
 });
 
-app.post('/api/post', function (req, res) {
-  console.log(req);
+app.post('/api/post', (req, res) => {
+  console.log(req.body);
   // console.log(res);
   res.status(200);
 })
