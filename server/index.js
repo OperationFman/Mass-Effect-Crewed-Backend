@@ -40,11 +40,10 @@ app.get('/api/get/:userId', (req, res) => {
   };
 });
 
-app.post('/api/post', (req, res) => {
+app.post('/api/update', (req, res) => {
   console.log(req.body);
-  // console.log(res);
-  res.status(200);
-})
+  res.status(201).send('It worked!')
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
