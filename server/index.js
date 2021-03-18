@@ -4,11 +4,10 @@ const app = express();
 const fs = require('fs');
 const cors = require('cors')
 app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded());
 
 saves = fs.readdirSync('./server/saves'); 
-
-// app.use(express.json());
-app.use(express.urlencoded({ extended:false }))
 
 function removeSavesFileType() {
   const result = new Array(saves.length)
