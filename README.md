@@ -16,3 +16,5 @@ Not using a CI/CD solution either since it's so simple. Auto deployments to hero
 # Installation
 * Clone or Download Repo
 * Install Node.js here: https://nodejs.org/en/download/
+* Navigate to this repo's directory
+* In a terminal, run the command 'npm start'
