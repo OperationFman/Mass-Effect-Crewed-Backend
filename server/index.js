@@ -1,12 +1,15 @@
-const express = require("express");
-const PORT = process.env.PORT || 3001;
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const session = require('express-session');
 const app = express();
+const PORT = process.env.PORT || 3001;
 const fs = require('fs');
-const cors = require('cors')
-app.use(cors())
-app.use(express.json());
-app.use(express.urlencoded({ extended:true }))
 
+app.use(cors())
+app.use(bodyParser.json());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended:true }))
 saves = fs.readdirSync('./server/saves'); 
 
 function removeSavesFileType() {
