@@ -12,3 +12,7 @@ Not using a CI/CD solution either since it's so simple. Auto deployments to hero
 * Javascript
 * ExpressJS
 * Heroku
+
+# Installation
+* Clone or Download Repo
+* Install Node.js here: https://nodejs.org/en/download/
