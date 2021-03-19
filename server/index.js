@@ -22,6 +22,7 @@ function makeNewSaveFile(id) {
   let template = JSON.parse(rawTemplate);
   let data = JSON.stringify(template, null, 2);
   fs.writeFileSync(`./server/saves/${id}.json`, data)
+  console.log(`Created/Updated save with id: ${id}.`)
 };
 
 function getSaveFile(id) {
@@ -47,6 +48,7 @@ app.post('/api/update/:userId', (req, res) => {
   updatedData = JSON.stringify(reqBody, null, 2);
   userId = req.params.userId;
   fs.writeFileSync(`./server/saves/${userId}.json`, updatedData)
+  console.log(`Created/Updated save with id: ${userId}.`)
   res.status(200)
   }
 );
