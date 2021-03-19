@@ -42,10 +42,14 @@ app.get('/api/get/:userId', (req, res) => {
   };
 });
 
-app.post('/api/update', (req, res) => {
-  console.log(req.body);
-  res.status(201).send('It worked!')
-});
+app.post('/api/update/:userId', (req, res) => {
+  reqBody = req.body;
+  updatedData = JSON.stringify(reqBody, null, 2);
+  userId = req.params.userId;
+  fs.writeFileSync(`./server/saves/${userId}.json`, updatedData)
+  res.status(200)
+  }
+);
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
